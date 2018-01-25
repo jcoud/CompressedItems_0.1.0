@@ -7,7 +7,6 @@ function compresseditems.is_bobs_init()
 end
 
 function compresseditems.items.ci_item_maker(source_item_name)
-	--return
 	local ci_item =
 	{
 		type = "item",
@@ -34,7 +33,6 @@ function compresseditems.items.ci_item_maker(source_item_name)
 end
 
 function compresseditems.items.uci_item_maker(source_item_name)
-	--return
 	local uci_item =
 	{
 		type = "item",
@@ -60,9 +58,7 @@ function compresseditems.items.uci_item_maker(source_item_name)
 	data:extend({uci_item})
 end
 
-
 function compresseditems.recipes.uci_recipe_maker(source_item_name)
-	--return
 	local uci_recipe =
 	{
 		type = "recipe",
@@ -88,7 +84,6 @@ function compresseditems.recipes.uci_recipe_maker(source_item_name)
 		result_count = data.raw.item[source_item_name].stack_size
 	}
 	data:extend({uci_recipe})
-	--return uci_recipe
 end
 
 function compresseditems.recipes.ci_recipe_maker(source_item_name)
@@ -103,5 +98,4 @@ function compresseditems.recipes.ci_recipe_maker(source_item_name)
 		result = "ci-"..source_item_name
 	}
 	data:extend({ci_recipe})
-	--return ci_recipe
 end

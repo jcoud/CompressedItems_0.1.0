@@ -25,7 +25,12 @@ local vanilla_subgroups =
 	"raw-material",
 	"raw-resource"
 }
-
+local vanilla_exclude_items =
+{
+	"wood",
+	"raw-wood",
+	"explosives"
+}
 for _, i in pairs(vanilla_subgroups) do
 	table.insert(init_subgroups,i)
 end
@@ -33,15 +38,17 @@ end
 for _, item in pairs(data.raw["item"]) do
 	for _, v in pairs(init_subgroups) do
 		if item.subgroup == v then
-		if item.name == "explosives" and item.name == "wood" and item.name == "raw-wood" then
-			break
-		else
-			compresseditems.items.ci_item_maker(item.name)
-			compresseditems.items.uci_item_maker(item.name)
+			for _, xcl in pairs(vanilla_exclude_items) do
+				if item.name == xcl then
+					break
+				else
+					compresseditems.items.ci_item_maker(item.name)
+					compresseditems.items.uci_item_maker(item.name)
 
-			compresseditems.recipes.ci_recipe_maker(item.name)
-			compresseditems.recipes.uci_recipe_maker(item.name)
-		end
+					compresseditems.recipes.ci_recipe_maker(item.name)
+					compresseditems.recipes.uci_recipe_maker(item.name)
+				end
+			end
 		end
 	end
 end
