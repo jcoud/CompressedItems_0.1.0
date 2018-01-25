@@ -1,0 +1,11 @@
+{
+    "name": "CompressedItems",
+    "version": "0.1.0",
+    "title": "[JC] Compressed Items",
+    "author": "jcoud",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.15"],
+    "description": "Allows players to compress items into one item."
+}
