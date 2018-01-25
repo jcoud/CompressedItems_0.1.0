@@ -1,5 +1,5 @@
 function compresseditems.is_bobs_init()
-	if bobmods and bobmods.lib and (bobmods.plates or bobmods.ores or bobmods.gems) then
+	if bobmods or bobmods.lib or (bobmods.plates or bobmods.ores or bobmods.gems) then
 		return true
 	else
 		return false
