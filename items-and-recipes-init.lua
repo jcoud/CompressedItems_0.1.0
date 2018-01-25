@@ -1,11 +1,10 @@
-local init_subgroups = {}
+local init_table = {}
 
 if compresseditems.is_bobs_init() then
-	local bobs_subgroups =
+	local bobs_included_subgroups =
 	{
 		"bob-material-smelting",
 		"bob-material",
-
 		--"bob-ores",
 		"bob-alloy",
 		"bob-gems",
@@ -16,29 +15,29 @@ if compresseditems.is_bobs_init() then
 
 	}
 	--else bobs_subgroups = {}
-	for _, i in pairs(bobs_subgroups) do
-		table.insert(init_subgroups,i)
+	for _, i in pairs(bobs_included_subgroups) do
+		table.insert(init_table,i)
 	end
 end
-local vanilla_subgroups =
+local vanilla_included_subgroups =
 {
 	"raw-material",
 	"raw-resource"
 }
-local vanilla_exclude_items =
+local vanilla_excluded_items =
 {
 	"wood",
 	"raw-wood",
 	"explosives"
 }
-for _, i in pairs(vanilla_subgroups) do
-	table.insert(init_subgroups,i)
+for _, i in pairs(vanilla_included_subgroups) do
+	table.insert(init_table,i)
 end
 
 for _, item in pairs(data.raw["item"]) do
 	for _, v in pairs(init_subgroups) do
 		if item.subgroup == v then
-			for _, xcl in pairs(vanilla_exclude_items) do
+			for _, xcl in pairs(vanilla_excluded_items) do
 				if item.name == xcl then
 					break
 				else
